@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Outfit } from 'next/font/google';
 import './globals.css';
 import ClientProviders from '@/components/ClientProviders';
+import { Analytics } from '@vercel/analytics/next';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="id" className={outfit.variable}>
       <body className="antialiased bg-background text-foreground">
         <ClientProviders>{children}</ClientProviders>
+        <Analytics />
       </body>
     </html>
   );
